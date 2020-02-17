@@ -1,6 +1,5 @@
 #!/bin/bash
-#
-###
+
 # Filename: install_cobbler.sh
 # email: m18557536209@163.com
 # Author: Riners
