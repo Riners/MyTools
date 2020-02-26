@@ -4,6 +4,7 @@ import os
 import commands
 import json
 import sys
+
 vpcregiondb_commands = "curl -s localhost:7070/api/v3/column/service.res.result | grep -C 1 vpcregiondb"
 vpcregiondb_json = json.loads(commands.getoutput(vpcregiondb_commands)[:-1].replace('\\\"', '\"').replace('\"{', '{').replace('}\"', '}'))["service.res.result"]
 vpcregiondb_info = "mysql -h{host} -u{user} -p{pwd} -D{db} -P{port}".format( host=vpcregiondb_json["db_host"], pwd=vpcregiondb_json["db_password"], user=vpcregiondb_json["db_user"], db=vpcregiondb_json["db_name"], port=vpcregiondb_json["db_port"] )
